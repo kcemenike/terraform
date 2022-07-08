@@ -39,7 +39,7 @@ jobs:
           name: TestStack
           template: test/frontend.yml
           parameter-overrides: >-
-            ID={{env.GITHUB_RUN_ID}}
+            ID=${{env.GITHUB_RUN_ID}}
       # - name: Setup Terraform
       #   uses: hashicorp/setup-terraform@v2
       #   with:
