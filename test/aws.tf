@@ -19,10 +19,10 @@ provider "aws" {
 
 }
 
-resource "aws_cloudformation_stack" "network" {
+resource "aws_cloudformation_stack" "test" {
   name = "Test Stack"
-
-  parameters = {}
-
-  template_body = file("~/test/frontend.yml")
+  parameters = {
+    ID = "${github.run_id}"
+  }
+  template_body = file("~/frontend.yml")
 }
