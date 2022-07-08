@@ -20,7 +20,7 @@ provider "aws" {
 }
 
 resource "aws_cloudformation_stack" "test" {
-  name = "Test Stack"
+  name = "Test-Stack"
   parameters = {
     ID = "$TF_VARS_ID"
   }
