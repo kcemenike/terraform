@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: $GITHUB_WORKSPACE/aws
+        working-directory: ./aws
     steps:
       - name: Checkout
         uses: actions/checkout@v3
