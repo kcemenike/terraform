@@ -37,7 +37,7 @@ jobs:
         uses: aws-actions/aws-cloudformation-github-deploy@v1
         with:
           name: TestStack
-          template: frontend.yml
+          template-file: ./frontend.yml
           parameter-overrides: >-
             ID={{env.GITHUB_RUN_ID}}
       # - name: Setup Terraform
