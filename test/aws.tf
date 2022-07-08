@@ -24,5 +24,5 @@ resource "aws_cloudformation_stack" "test" {
   parameters = {
     ID = "$TF_VARS_ID"
   }
-  template_body = file("test/frontend.yml")
+  template_body = file("~/test/frontend.yml")
 }
