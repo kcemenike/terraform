@@ -1,4 +1,4 @@
-# Terraform + CloudFormation + GithubActions
+# GithubActions + Terraform + Cloudformation
 
 This section shows how you can use Github actions to automate the deployment of a cloudformation stack in terraform
 
