@@ -38,6 +38,8 @@ jobs:
           ls -al
           pwd
           ls ~
+          echo 1. ${{github.run_id}}
+          echo 2. ${github.run_id}
       # - name: Deploy AWS infra
       #   uses: aws-actions/aws-cloudformation-github-deploy@v1
       #   with:
@@ -65,7 +67,7 @@ jobs:
         id: plan
         run: terraform plan -no-color -var "ID=${{github.run_id}}"
         continue-on-error: false
-      # - name: Terraform Apply
-      #   run: terraform apply -auto-approve -input=false
+      - name: Terraform Apply
+        run: terraform apply -auto-approve -input=false -var "ID=${{github.run_id}}"
       # - name: Terraform Destroy
       #   run: terraform destroy -auto-approve -input=false
