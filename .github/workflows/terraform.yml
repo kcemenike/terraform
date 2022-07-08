@@ -1,4 +1,4 @@
-name: Terraform
+name: v1.0
 
 on:
   push:
