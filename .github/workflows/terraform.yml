@@ -6,6 +6,8 @@ on:
       - main
       - github-action-attempt
   pull_request:
+    branches:
+      - main
 
 jobs:
   terraform:
