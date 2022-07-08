@@ -20,6 +20,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      # auth tf
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          cli_config_credentials_token: ${{secrets.TF_API_TOKEN}}
       # aws auth
       - name: Configure AWS
         uses: aws-actions/configure-aws-credentials@v1
