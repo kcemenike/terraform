@@ -39,7 +39,7 @@ jobs:
           pwd
           ls ~
           echo 1. ${{github.run_id}}
-          echo 2. ${github.run_id}
+          echo 2. $github.run_id
       # - name: Deploy AWS infra
       #   uses: aws-actions/aws-cloudformation-github-deploy@v1
       #   with:
