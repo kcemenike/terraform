@@ -22,7 +22,7 @@ provider "aws" {
 resource "aws_cloudformation_stack" "bucket" {
   name = "Test-Stack"
   parameters = {
-    ID = "12345"
+    ID = "{$github.run_id}"
   }
   template_body = file("${path.module}/frontend.yml")
 }
