@@ -2,7 +2,7 @@ Description: >
   UdaPeople frontend stack.
 
 Parameters:
-  ID:
+  bucketID:
     Description: Unique identifier.
     Type: String
 
@@ -10,7 +10,7 @@ Resources:
   WebsiteBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Sub 'github-run-${ID}-2'
+      BucketName: !Sub 'github-run-${bucketID}'
       AccessControl: PublicRead
       WebsiteConfiguration:
         IndexDocument: index.html
@@ -33,4 +33,4 @@ Outputs:
     Value: !GetAtt WebsiteBucket.WebsiteURL
     Description: URL for website hosted on S3
     Export:
-      Name: ID
+      Name: Bucket ID
