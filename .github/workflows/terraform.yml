@@ -4,7 +4,11 @@ on:
   push:
     branches:
       - main
+<<<<<<< HEAD
       # - github-action-attempt
+=======
+      - github-action-attempt
+>>>>>>> main
   pull_request:
     branches:
       - main
