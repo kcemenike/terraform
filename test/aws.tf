@@ -22,7 +22,7 @@ provider "aws" {
 resource "aws_cloudformation_stack" "test" {
   name = "Test Stack"
   parameters = {
-    ID = "${github.run_id}"
+    ID = "$TF_VARS_ID"
   }
   template_body = file("~/frontend.yml")
 }
