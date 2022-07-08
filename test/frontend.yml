@@ -1,5 +1,4 @@
-Description: >
-  UdaPeople frontend stack.
+Description: Frontend stack
 
 Parameters:
   bucketID:
@@ -33,4 +32,4 @@ Outputs:
     Value: !GetAtt WebsiteBucket.WebsiteURL
     Description: URL for website hosted on S3
     Export:
-      Name: Bucket ID
+      Name: BucketID
