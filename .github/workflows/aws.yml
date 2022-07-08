@@ -59,7 +59,7 @@ jobs:
         run: terraform init
       - name: Terraform Validate
         id: validate
-        run: terraform validate -input=false
+        run: terraform validate # -input=false -var="ID=${{github.run_id}}"
       - name: Terraform Plan
         id: plan
         run: terraform plan -input=false -var "ID=${{github.run_id}}"
