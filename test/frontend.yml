@@ -10,7 +10,7 @@ Resources:
   WebsiteBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Sub 'github-run-${ID}'
+      BucketName: !Sub 'github-run-${ID}-2'
       AccessControl: PublicRead
       WebsiteConfiguration:
         IndexDocument: index.html

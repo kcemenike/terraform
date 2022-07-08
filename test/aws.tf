@@ -18,3 +18,11 @@ terraform {
 provider "aws" {
 
 }
+
+resource "aws_cloudformation_stack" "network" {
+  name = "Test Stack"
+
+  parameters = {}
+
+  template_body = file("~/test/frontend.yml")
+}

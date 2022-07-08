@@ -33,30 +33,33 @@ jobs:
           ls -al
           pwd
           ls ~
-      - name: Deploy AWS infra
-        uses: aws-actions/aws-cloudformation-github-deploy@v1
-        with:
-          name: TestStack
-          template: test/frontend.yml
-          parameter-overrides: >-
-            ID=${{github.run_id}}
+      # - name: Deploy AWS infra
+      #   uses: aws-actions/aws-cloudformation-github-deploy@v1
+      #   with:
+      #     name: TestStack
+      #     template: test/frontend.yml
+      #     parameter-overrides: >-
+      #       ID=${{github.run_id}}
+      # - name: Destroy AWS infra
+      #   run: |
+      #     aws cloudformation delete-stack Teststack
       # - name: Setup Terraform
       #   uses: hashicorp/setup-terraform@v2
       #   with:
       #     cli_config_credentials_token: ${{secrets.TF_API_TOKEN}}
-      # - name: Terraform Format
-      #   id: fmt
-      #   run: terraform fmt -check
-      # - name: Terraform Init
-      #   id: init
-      #   run: terraform init
-      # - name: Terraform Validate
-      #   id: validate
-      #   run: terraform validate -no-color
-      # - name: Terraform Plan
-      #   id: plan
-      #   run: terraform plan -no-color -input=false
-      #   continue-on-error: false
+      - name: Terraform Format
+        id: fmt
+        run: terraform fmt -check
+      - name: Terraform Init
+        id: init
+        run: terraform init
+      - name: Terraform Validate
+        id: validate
+        run: terraform validate -no-color
+      - name: Terraform Plan
+        id: plan
+        run: terraform plan -no-color -input=false
+        continue-on-error: false
       # - name: Terraform Apply
       #   run: terraform apply -auto-approve -input=false
       # - name: Terraform Destroy
