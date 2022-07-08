@@ -19,13 +19,14 @@ provider "aws" {
 
 }
 
-variable "ID" {
+variable "params_ID" {
   type = string
 }
+
 resource "aws_cloudformation_stack" "bucket" {
   name = "Test-Stack"
   parameters = {
-    ID = var.ID
+    ID = var.params_ID
   }
   template_body = file("${path.module}/frontend.yml")
 }

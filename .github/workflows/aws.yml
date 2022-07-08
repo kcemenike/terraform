@@ -67,4 +67,4 @@ jobs:
       - name: Terraform Apply
         run: terraform apply -auto-approve -input=false -var "ID=${{github.run_id}}"
       - name: Terraform Destroy
-        run: terraform destroy -auto-approve -input=false
+        run: terraform destroy -auto-approve -input=false -var "ID=${{github.run_id}}"
