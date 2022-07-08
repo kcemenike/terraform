@@ -28,5 +28,5 @@ resource "aws_cloudformation_stack" "bucket" {
   parameters = {
     bucketID = var.ID # we parsed this value
   }
-  template_body = file("${path.module}/frontend.yml")
+  template_body = file("${path.module}/bucket.yml")
 }

@@ -37,20 +37,6 @@ jobs:
           pwd
           ls ~
           echo 1. ${{github.run_id}}
-      # - name: Deploy AWS infra
-      #   uses: aws-actions/aws-cloudformation-github-deploy@v1
-      #   with:
-      #     name: TestStack
-      #     template: test/frontend.yml
-      #     parameter-overrides: >-
-      #       ID=${{github.run_id}}
-      # - name: Destroy AWS infra
-      #   run: |
-      #     aws cloudformation delete-stack Teststack
-      # - name: Setup Terraform
-      #   uses: hashicorp/setup-terraform@v2
-      #   with:
-      #     cli_config_credentials_token: ${{secrets.TF_API_TOKEN}}
       - name: Terraform Format
         id: fmt
         run: terraform fmt -check
