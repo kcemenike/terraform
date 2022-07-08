@@ -63,9 +63,9 @@ jobs:
       #   run: terraform validate -var="ID=${{github.run_id}}"
       - name: Terraform Plan
         id: plan
-        run: terraform plan -no-color -var "TF_VAR_ID=${{github.run_id}}"
+        run: terraform plan -no-color -var "ID=$TF_VAR_ID"
         continue-on-error: false
       - name: Terraform Apply
-        run: terraform apply -auto-approve -input=false -var "TF_VAR_ID=${{github.run_id}}"
+        run: terraform apply -auto-approve -input=false -var "ID=${{github.run_id}}"
       # - name: Terraform Destroy
       #   run: terraform destroy -auto-approve -input=false
