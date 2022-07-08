@@ -1,4 +1,10 @@
 terraform {
+  cloud {
+    organization = "pydataco"
+    workspaces {
+      name = "terraform"
+    }
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -10,7 +16,7 @@ terraform {
 }
 
 provider "aws" {
-  profile = "final"
+
 }
 
 resource "aws_instance" "app_server" {
